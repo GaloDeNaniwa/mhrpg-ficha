@@ -17,23 +17,6 @@ export const RULES = [
   {id:'descanso', chapter:'Aventura', page:132, tags:['descanso','recuperação'], title:'Descanso', summary:'O app terá botões para descanso curto/longo e aplicará recuperação conforme regras cadastradas pelo mestre.'},
   {id:'modo-campanha', chapter:'Segurança do App', page:null, tags:['anti-burla','mestre'], title:'Modo campanha', summary:'Em campanha, alterações mecânicas críticas exigem aprovação do mestre e ficam registradas em log.'}
 ];
-export const CONDITIONS = [
-  {id:'caido', name:'Caído', tags:['condição','combate'], summary:'O personagem está no chão ou em posição inferior. Normalmente precisa gastar movimento/ação conforme a mesa determinar para se levantar. Pode ter dificuldade contra ataques próximos e piorar deslocamento.'},
-  {id:'cego', name:'Cego', tags:['condição','percepção'], summary:'O personagem não enxerga. Testes que dependem de visão ficam comprometidos; ataques e defesa podem sofrer desvantagens conforme o efeito aplicado.'},
-  {id:'surdo', name:'Surdo', tags:['condição','percepção'], summary:'O personagem não escuta. Testes baseados em audição falham ou sofrem penalidade, e comunicação verbal pode não funcionar.'},
-  {id:'agarrado', name:'Agarrado', tags:['condição','controle'], summary:'O personagem está preso por alguém, algo ou algum efeito. Seu deslocamento fica restrito e pode precisar vencer teste ou usar ação para escapar.'},
-  {id:'imobilizado', name:'Imobilizado', tags:['condição','controle'], summary:'O personagem está preso de forma mais severa. Movimentos físicos ficam muito limitados, podendo prejudicar ataques, deslocamento e reações.'},
-  {id:'incapacitado', name:'Incapacitado', tags:['condição','ação'], summary:'O personagem não consegue agir normalmente. Use para efeitos que removem ações, impedem reação ou deixam o alvo temporariamente sem capacidade de atuar.'},
-  {id:'inconsciente', name:'Inconsciente', tags:['condição','grave'], summary:'O personagem está apagado. Não age, não reage, fica vulnerável e normalmente cai, mantendo-se assim até cura, tempo, descanso ou efeito que o desperte.'},
-  {id:'envenenado', name:'Envenenado', tags:['condição','dano'], summary:'O corpo está afetado por toxina, gás, veneno ou substância. Pode causar dano contínuo, penalidades ou testes recorrentes, de acordo com o efeito que aplicou.'},
-  {id:'medo', name:'Medo', tags:['condição','mental'], summary:'O personagem está assustado por ameaça, presença ou efeito. Pode ter dificuldade para se aproximar da fonte do medo, atacar ou manter compostura.'},
-  {id:'encantado', name:'Encantado', tags:['condição','social','mental'], summary:'O personagem está influenciado. Pode tratar a fonte do efeito de modo favorável, hesitar contra ela ou sofrer restrições sociais/mentais.'},
-  {id:'enfurecido', name:'Enfurecido', tags:['condição','mental'], summary:'O personagem age tomado por raiva, impulso ou instinto. Pode ganhar agressividade, mas perder controle, foco ou opções táticas.'},
-  {id:'paralisado', name:'Paralisado', tags:['condição','controle'], summary:'O corpo fica travado por efeito físico, mental ou de Quirk. O personagem não se move normalmente e fica exposto a ataques.'},
-  {id:'sonolento', name:'Sonolento', tags:['condição','mental'], summary:'O personagem está lento, quase dormindo ou sem foco. Pode ter queda de atenção, reação e desempenho até o efeito acabar.'},
-  {id:'letargico', name:'Letárgico', tags:['condição','mental','físico'], summary:'O personagem está apático, sem energia ou com lentidão extrema. Use para penalidades em ações, deslocamento e respostas rápidas.'},
-  {id:'camuflado', name:'Camuflado', tags:['condição','furtividade'], summary:'O personagem está misturado ao ambiente. Inimigos podem precisar de Percepção, Investigação ou efeito especial para localizá-lo.'},
-  {id:'invisivel', name:'Invisível', tags:['condição','furtividade'], summary:'O personagem não pode ser visto por meios comuns. Ainda pode ser detectado por som, cheiro, rastros, sentidos especiais ou efeitos de área.'},
-  {id:'alucinado', name:'Alucinado', tags:['mal','mental'], summary:'A percepção do personagem está distorcida. Ele pode confundir alvos, ambientes, ameaças ou tomar decisões com base em estímulos falsos.'},
-  {id:'exausto', name:'Exausto', tags:['estado','recurso'], summary:'Representa desgaste acumulado. Acompanhe o nível de exaustão no painel de combate e aplique os malefícios definidos pela mesa ou pela regra cadastrada.'}
-];
+
+import { CONDITIONS_EXACT } from './conditionsExact.js';
+export const CONDITIONS = CONDITIONS_EXACT;

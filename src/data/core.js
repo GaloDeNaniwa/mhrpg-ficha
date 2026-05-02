@@ -26,10 +26,10 @@ export const SKILLS = [
 ];
 export const ACTION_TYPES = ['Ação','Deslocamento','Ação Tática','Ação Bônus','Reação','Livre'];
 export const ATTRIBUTE_DESCRIPTIONS = {
-  'Força':'Representa potência física, atletismo bruto e capacidade de bater, erguer, empurrar, puxar e sustentar esforço muscular. Valores altos sugerem corpo forte e atlético; valores baixos indicam dificuldade com força física.',
-  'Destreza':'Representa agilidade, reflexos, coordenação, equilíbrio e precisão corporal. Valores altos indicam movimentos rápidos e controle fino; valores baixos podem indicar desajeito ou lentidão motora.',
-  'Constituição':'Representa saúde, resistência, fôlego e tolerância a dano, doença, veneno e esforço prolongado. Valores altos sugerem vigor e robustez; valores baixos indicam fragilidade ou cansaço fácil.',
-  'Inteligência':'Representa memória, estudo, raciocínio, investigação, conhecimento técnico e capacidade analítica. Valores altos sugerem mente curiosa e estudiosa; valores baixos indicam dificuldade com detalhes e lógica complexa.',
-  'Vontade':'Representa intuição, percepção, determinação, autocontrole e força mental. Valores altos indicam ânimo firme e instinto afiado; valores baixos indicam pessimismo, hesitação ou baixa resistência mental.',
-  'Carisma':'Representa presença, comunicação, energia social, influência e expressão. Valores altos indicam presença marcante; valores baixos sugerem timidez, rudeza ou pouca habilidade social.'
+  'Força':'Um alto valor de Força geralmente corresponde com um corpo musculoso e atlético, enquanto um personagem com um baixo valor de Força pode ser magro ou gordo, porém fraco.',
+  'Destreza':'Um personagem com Destreza alta é provavelmente ágil e esbelto, enquanto um personagem com destreza baixa pode ser tanto desengonçado e desajeitado ou pesado e com dedos grossos.',
+  'Constituição':'Um personagem com Constituição alta geralmente parece saudável, com os olhos brilhantes e energia abundante. Um personagem com baixa Constituição pode estar sempre adoentado ou fragilizado.',
+  'Inteligência':'Um personagem com Inteligência alta pode ser altamente curioso e estudioso, enquanto um personagem com Inteligência baixa pode falar de maneira simples ou facilmente esquecer detalhes.',
+  'Vontade':'Um personagem com Vontade alta dispõe de uma intuição afiada, junto a um ânimo inabalável. Um personagem com Vontade baixa tende a ser azarado e pessimista.',
+  'Carisma':'Um personagem com Carisma alta pode ser hiperativo e energético. Um personagem com Carisma baixa pode parecer bronco, desarticulado ou tímido.'
 };

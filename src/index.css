@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html { font-size: 20px; }
+html { font-size: 18px; }
 body { line-height: 1.6; }
 input, textarea, select, button { font-size: 1rem; }
 button, input, textarea, select { min-height: 2.75rem; }
-@media (max-width: 640px) { html { font-size: 19px; } }
+@media (max-width: 640px) { html { font-size: 17px; } }
 
 :root { color-scheme: dark; }
 body { margin: 0; background: #09090b; color: #f4f4f5; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -17,4 +17,12 @@ input, textarea, select { color-scheme: dark; }
   .print\:text-black { color: black !important; }
   .print\:border-black { border-color: black !important; }
   .print\:shadow-none { box-shadow: none !important; }
+}
+
+.mobile-bottom-nav { display: none; }
+@media (max-width: 768px) {
+  .desktop-header { position: static !important; }
+  .mobile-bottom-nav { display: grid; }
+  .mobile-hidden-actions { display: none; }
+  main { padding-bottom: 6rem; }
 }

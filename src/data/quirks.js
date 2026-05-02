@@ -19,12 +19,10 @@ export const TECHNIQUE_TEMPLATES = [
   {id:'barreira', name:'Barreira', base:'Defesa', action:'Reação ou Ação Tática', cost:1, range:'Próprio/curto', area:'Alvo ou zona', damage:'—', save:'—', summary:'Reduz dano, concede cobertura ou cria obstáculo.'},
   {id:'impulso-movimento', name:'Impulso de Movimento', base:'Suporte', action:'Ação Bônus', cost:1, range:'Próprio', area:'—', damage:'—', save:'—', summary:'Aumenta deslocamento, salto, escalada ou reposicionamento.'}
 ];
-export const NATIVE_ABILITIES = [
-  { id:'adaptabilidade-fisiologica', name:'Adaptabilidade Fisiológica', summary:'Permite justificar traços corporais adicionais ligados ao Quirk. Use para personagens cujo poder altera permanentemente o corpo.' },
-  { id:'resistencia-fadiga', name:'Resistência à Fadiga', summary:'A fisiologia do Quirk ajuda a suportar desgaste. Útil para personagens que lutam por mais tempo ou ignoram parte do primeiro nível de exaustão conforme aprovação da mesa.' },
-  { id:'reserva-energia', name:'Reserva de Energia', summary:'O personagem acumula energia residual do Quirk ao longo do combate. Use para poderes baseados em carga, reserva ou crescimento.' },
-  { id:'sentido-quirk', name:'Sentido de Quirk', summary:'O Quirk concede percepção especial ligada ao seu tema: calor, vibração, eletricidade, cheiro, pressão, energia ou outro sinal.' }
-];
+import { NATIVE_ABILITIES_EXACT, VIRTUAL_POINTS_TEXT, SPECIAL_MANIFESTATIONS } from './quirkFull.js';
+export const NATIVE_ABILITIES = NATIVE_ABILITIES_EXACT;
+export { VIRTUAL_POINTS_TEXT, SPECIAL_MANIFESTATIONS };
+
 
 export const QUIRK_PRESETS = [
   { id:'custom', name:'Quirk personalizado', type:'emissor', base:'dano', attribute:'Força', concept:'Crie o conceito do zero com aprovação do narrador.', weakness:'Defina custo, gatilhos, limites físicos, fraquezas e riscos.', techniques:[] },
