@@ -36,3 +36,5 @@ input, textarea, select { color-scheme: dark; }
 @media (max-width: 768px) {
   .sheet-wrap { font-size: 0.9rem; }
 }
+
+.sheet-table th,.sheet-table td{border:1px solid rgb(63 63 70);padding:.55rem .65rem;vertical-align:top;white-space:normal;word-break:normal;overflow-wrap:anywhere;line-height:1.35}.sheet-table th{background:rgba(6,78,59,.65);font-weight:900;color:white}.sheet-table td{background:rgba(9,9,11,.65)}@media print{.sheet-table th,.sheet-table td{border-color:#000!important;background:#fff!important;color:#000!important}.sheet-table{color:#000!important}}
