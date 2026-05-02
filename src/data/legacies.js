@@ -1,231 +1,45 @@
+export const LEGACY_INTRO = {
+  proficiencies: 'Cada Legado torna o personagem proficiente em duas perícias, escolhidas dentro de uma lista própria. Sem Legado escolhe uma perícia à escolha.',
+  attribute: 'Cada Legado concede aumento de atributo no momento da escolha, de acordo com o AVA e o atributo recomendado.',
+  special: 'Cada Legado possui uma Característica Especial voltada a situações gerais e convivência, não a combate direto.',
+  custom: 'Legados personalizados devem manter a mesma estrutura: descrição, Perícias, Atributo Recomendado e Característica Especial, sempre com aprovação do Narrador.'
+};
+
+const p = (id, name, description, skills, recommendedAttribute, specialName, specialSummary, sourcePage=85) => ({
+  id,
+  name,
+  description,
+  skills,
+  recommendedAttribute,
+  specialName,
+  specialSummary,
+  sourcePage,
+  summary: description,
+});
+
 export const LEGACIES = [
-  {
-    "id": "sem-legado",
-    "name": "Sem Legado",
-    "summary": "Motivação independente, sem inspiração em símbolo, herói, vilão ou ideal conhecido. Recebe aumento de atributo e uma perícia, mas não recebe característica especial.",
-    "skills": [
-      "Uma perícia à escolha"
-    ],
-    "recommendedAttribute": "À escolha",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "asas-da-liberdade",
-    "name": "Asas da Liberdade",
-    "summary": "Legado Asas da Liberdade: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "bandeira-invenc-vel",
-    "name": "Bandeira invencível",
-    "summary": "Legado Bandeira invencível: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Persuasão",
-      "Intimidação",
-      "Intuição",
-      "Percepção",
-      "História"
-    ],
-    "recommendedAttribute": "Vontade",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "cavalheiro-rebelde",
-    "name": "Cavalheiro Rebelde",
-    "summary": "Legado Cavalheiro Rebelde: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "chama-da-determina-o",
-    "name": "Chama da Determinação",
-    "summary": "Legado Chama da Determinação: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "escudo-inquebr-vel",
-    "name": "Escudo Inquebrável",
-    "summary": "Legado Escudo Inquebrável: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "esp-rito-indom-vel",
-    "name": "Espírito Indomável",
-    "summary": "Legado Espírito Indomável: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "guardi-o-das-ruas",
-    "name": "Guardião Das Ruas",
-    "summary": "Legado Guardião Das Ruas: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Furtividade",
-      "Investigação",
-      "Acrobacia",
-      "Intuição",
-      "Sobrevivência"
-    ],
-    "recommendedAttribute": "Destreza",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "longa-vig-lia",
-    "name": "Longa Vigília",
-    "summary": "Legado Longa Vigília: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "justi-a-implac-vel",
-    "name": "Justiça Implacável",
-    "summary": "Legado Justiça Implacável: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "mestre-da-adaptabilidade",
-    "name": "Mestre da Adaptabilidade",
-    "summary": "Legado Mestre da Adaptabilidade: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "s-mbolo-do-medo",
-    "name": "Símbolo do Medo",
-    "summary": "Legado Símbolo do Medo: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "s-mbolo-da-paz",
-    "name": "Símbolo da Paz",
-    "summary": "Legado Símbolo da Paz: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "tecido-da-ordem",
-    "name": "Tecido da Ordem",
-    "summary": "Legado Tecido da Ordem: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "transformador",
-    "name": "Transformador",
-    "summary": "Legado Transformador: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "vis-o-do-futuro",
-    "name": "Visão Do Futuro",
-    "summary": "Legado Visão Do Futuro: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Investigação",
-      "Intuição",
-      "Percepção",
-      "História",
-      "Persuasão"
-    ],
-    "recommendedAttribute": "Inteligência",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "vontade-da-liberdade",
-    "name": "Vontade da Liberdade",
-    "summary": "Legado Vontade da Liberdade: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Atletismo",
-      "Acrobacia",
-      "Persuasão",
-      "Intimidação",
-      "Sobrevivência"
-    ],
-    "recommendedAttribute": "Carisma",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "voz-amplificada",
-    "name": "Voz Amplificada",
-    "summary": "Legado Voz Amplificada: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Consulte a lista do legado no livro/app"
-    ],
-    "recommendedAttribute": "Consulte o legado",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  },
-  {
-    "id": "voz-silenciada",
-    "name": "Voz Silenciada",
-    "summary": "Legado Voz Silenciada: representa a figura, ideal ou símbolo que molda a inspiração do personagem. Escolha 2 perícias da lista, aplique o aumento de atributo recomendado e registre a característica especial com aprovação do Narrador.",
-    "skills": [
-      "Furtividade",
-      "Percepção",
-      "Intuição",
-      "Investigação",
-      "História"
-    ],
-    "recommendedAttribute": "Vontade",
-    "special": "Característica especial própria do legado",
-    "sourcePage": 85
-  }
+  p('sem-legado','Sem Legado','Motivação independente, sem inspiração em grande nome, símbolo ou ideal. Recebe os aumentos de atributo e uma perícia à escolha, mas não recebe característica especial.',['Uma perícia à escolha'],'À escolha','—','Não concede característica especial.',85),
+  p('asas-da-liberdade','Asas da Liberdade','Inspiração de velocidade, precisão e visão estratégica. Ideal para personagens que preferem agir rápido, antecipar movimentos e salvar aliados em momentos críticos.',['Acrobacia','Percepção','Investigação','Intuição'],'Destreza','Olhos no Vento','Uma vez por dia, permite um Teste de Destreza para detectar ameaça ou evento iminente antes que fique evidente, com alcance baseado no nível.',86),
+  p('bandeira-invencivel','Bandeira invencível','Legado ligado a patriotismo, justiça, liberdade, causa coletiva e liderança em crise. Serve a personagens que inspiram outros e defendem um símbolo a todo custo.',['Persuasão','Intimidação','Intuição','Percepção','História'],'Vontade','Resolução Inabalável','Uma vez por dia, permite Teste de Vontade para inspirar aliados/civis e remover condições mentais de quem possa ouvir sua voz.',86),
+  p('cavalheiro-rebelde','Cavalheiro Rebelde','Inspiração de espetáculo, charme, eloquência e impacto público. Para personagens que querem ser lembrados pela forma grandiosa de agir.',['Intimidação','Atletismo','História','Provocação','Percepção'],'Carisma','Performance Ao Vivo','Após feito impressionante ou combate, uma vez por dia pode testar Carisma para receber dinheiro por apoio, doações ou visualizações.',87),
+  p('chama-da-determinacao','Chama da Determinação','Legado de ambição, perseverança e foco absoluto. O personagem acredita que sacrifício e esforço constante levam à grandeza.',['Intimidação','Atletismo','História','Provocação','Percepção'],'Força','Fogo Que Nunca Apaga','Uma vez por dia, após combate, permite Teste de Força para recuperar PV proporcional ao dano sofrido no combate.',87),
+  p('escudo-inquebravel','Escudo Inquebrável','Inspiração de resiliência, coragem e proteção. O personagem busca ser o pilar que suporta perigos e protege aliados.',['Atletismo','Intuição','Intimidação','Percepção','Provocação'],'Constituição','Coração de Pedra','Uma vez por dia, permite Teste de Constituição para ignorar temporariamente efeitos adversos dos dois primeiros níveis de exaustão.',88),
+  p('espirito-indomavel','Espírito Indomável','Legado de liberdade, instinto, desafio às normas e energia feroz. O personagem vive para testar limites e não aceitar restrições.',['Atletismo','Acrobacia','Intuição','Provocação','Sobrevivência'],'Destreza','Mais Uma Chance','Uma vez por dia, após falhar em Teste de Atributo ou Salvaguarda, permite Teste de Destreza para repetir a rolagem original com proficiência.',88),
+  p('guardiao-das-ruas','Guardião Das Ruas','Inspiração de vigilância urbana, proteção dos vulneráveis e atuação fora dos holofotes. O personagem conhece as ruas e age por senso de dever.',['Furtividade','Investigação','Acrobacia','Intuição','Sobrevivência'],'Destreza','Vigilante Oculto','Uma vez por dia em zona urbana, permite Teste de Destreza para mover-se sem ser percebido, misturando-se ao ambiente urbano.',89),
+  p('longa-vigilia','Longa Vigília','Legado de observação distante, escolhas difíceis e visão aguçada. Indicado para personagens solitários, investigativos ou de missões secretas.',['Percepção','Investigação','Intuição','Prestidigitação','História'],'Destreza','Predador','Uma vez por dia, permite Teste de Inteligência para analisar cena, alvo ou situação complexa e perceber informação oculta ou padrão importante.',89),
+  p('justica-implacavel','Justiça Implacável','Legado de moral rígida, sacrifícios duros e oposição a estruturas corruptas. O personagem busca expor falsidade e hipocrisia.',['Investigação','Intuição','Intimidação','História','Provocação'],'Destreza','Punir as Farsas','Uma vez por dia, permite Teste de Vontade para resistir a manipulação/pressão social e perceber contradições morais ou agendas ocultas.',90),
+  p('mestre-da-adaptabilidade','Mestre da Adaptabilidade','Inspiração de flexibilidade, furtividade, precisão e ajuste rápido às circunstâncias. Combina agilidade e pensamento estratégico.',['Furtividade','Acrobacia','Prestidigitação','Intuição','Percepção'],'Destreza','Infiltrador','Uma vez por dia, permite Teste de Destreza para executar ação física precisa, infiltrar-se ou evitar detecção e complicações.',90),
+  p('simbolo-do-medo','Símbolo do Medo','Legado de presença imponente, manipulação psicológica e domínio pelo medo. Adequado a personagens que impõem autoridade pela intimidação.',['Intimidação','Enganação','Persuasão','Investigação','Provocação'],'Carisma','Presença Demoníaca','Uma vez por dia, permite Teste de Carisma para intimidar/manipular sem ameaça direta; pode influenciar indivíduos ou grupos.',91),
+  p('simbolo-da-paz','Símbolo da Paz','Inspiração heroica de esperança, coragem e justiça. O personagem quer ser farol para os indefesos e confortar os oprimidos.',['Atletismo','Intuição','Intimidação','Persuasão','Percepção'],'Carisma','Sorriso Inabalável','Uma vez por dia, após feito heroico ou proteção impressionante, permite Teste de Carisma para inspirar aliados próximos por algumas rodadas.',91),
+  p('tecido-da-ordem','Tecido da Ordem','Legado de disciplina, elegância e organização. O personagem acredita em manter coesão, ordem e excelência em meio ao caos.',['Persuasão','Intuição','Mecânica','História','Prestidigitação'],'Inteligência','Mente Brilhante E Organizada','Uma vez por dia, permite Teste de Vontade para obter insight sobre problema, pessoa ou lugar e revelar detalhe ignorado.',92),
+  p('transformador','Transformador','Inspiração de desconstruir sistemas falhos para reconstruir algo mais eficiente. Indicado para personagens frios, metódicos e estruturais.',['Investigação','Sobrevivência','Intuição','História','Intimidação'],'Inteligência','Aprendizado Estrutural','Uma vez por dia, permite Teste de Inteligência para compreender profundamente estrutura, sistema ou pessoa e identificar pontos fracos.',92),
+  p('visao-do-futuro','Visão Do Futuro','Legado de previsão, observação e planejamento. O personagem busca se manter um passo à frente por análise e estudo.',['Investigação','Intuição','Percepção','História','Persuasão'],'Inteligência','Antecipação Calculada','Uma vez por dia, permite Teste de Inteligência para prever o resultado provável de decisão ou evento e orientar o grupo.',93),
+  p('vontade-da-liberdade','Vontade da Liberdade','Legado de autonomia, ruptura de amarras e desafio a estruturas opressivas. O personagem valoriza liberdade com responsabilidade.',['Intimidação','Provocação','História','Investigação','Enganação'],'Vontade','Discurso Motivacional','Uma vez por dia, permite Teste de Vontade para motivar aliado e conceder Inspiração ao personagem e ao aliado escolhido.',93),
+  p('voz-amplificada','Voz Amplificada','Inspiração de comunicação, liderança e impacto social. O personagem usa palavras para comandar atenção e mover multidões.',['Persuasão','Atuação','Intimidação','Percepção','Provocação'],'Carisma','Voz Proclamadora','Uma vez por dia, permite Teste de Carisma para ser ouvido em ambientes ruidosos e influenciar decisões de civis ou pessoas menos inteligentes.',94),
+  p('voz-silenciada','Voz Silenciada','Legado de discrição, paciência e atuação nas sombras. O personagem prefere neutralizar ameaças sem holofotes.',['Furtividade','Percepção','Intuição','Investigação','História'],'Vontade','Véu do Silêncio','Uma vez por dia, permite Teste de Destreza para ficar invisível por 1 minuto em sombras; não funciona em combate ou área aberta.',94),
+  p('legado-personalizado','Legado Personalizado','Crie um legado próprio seguindo a mesma estrutura do livro: conceito/inspiração, lista de perícias, atributo recomendado e característica especial aprovada pelo Narrador.',['Escolha com o Narrador'],'À escolha','Característica Especial Personalizada','Preencha as notas mecânicas com o efeito aprovado. Use o mesmo padrão dos legados oficiais.',85),
 ];
+
+export function getLegacy(id){
+  return LEGACIES.find(l => l.id === id) || LEGACIES[0];
+}
