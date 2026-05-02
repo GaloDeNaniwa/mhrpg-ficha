@@ -28,3 +28,11 @@ input, textarea, select { color-scheme: dark; }
 }
 .sheet-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem;align-items:start}.sheet-grid-values{grid-auto-rows:auto}.sheet-grid-persona{grid-template-columns:repeat(12,minmax(0,1fr))}.sheet-grid-classes{grid-template-columns:repeat(9,minmax(0,1fr))}@media print{.sheet-wrap button,.desktop-header,.mobile-bottom-nav{display:none!important}.sheet-wrap{font-size:12px}.sheet-grid{gap:6px}.sheet-wrap *{box-shadow:none!important}}
 @media (max-width: 768px){html{font-size:16px}.sheet-wrap .min-w-\[1120px\]{min-width:980px}}
+
+/* Sheet readability fixes */
+.sheet-wrap table, .sheet-wrap div { box-sizing: border-box; }
+.sheet-wrap { font-size: 0.95rem; }
+.sheet-wrap .break-words { overflow-wrap: anywhere; word-break: normal; }
+@media (max-width: 768px) {
+  .sheet-wrap { font-size: 0.9rem; }
+}

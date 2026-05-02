@@ -35,3 +35,22 @@ export function skillValue(sheet, skillName){
   const val = attrMod(sheet.attributes[ATTRIBUTE_KEYS[sk.attribute]]) + ((sheet.skillProfs||[]).includes(skillName) ? proficiency(sheet.level) : 0);
   return val;
 }
+
+export const MANIFESTATION_ACTION_MODIFIERS = {
+  passiva: -1,
+  inacao: 0,
+  acao_bonus: 1,
+  reacao: 1,
+  acao_tatica: 3,
+};
+
+export function manifestationVirtualPoints(quirk = {}){
+  const activation = quirk.manifestationActivation || 'inacao';
+  const base = 3;
+  const modifier = MANIFESTATION_ACTION_MODIFIERS[activation] ?? 0;
+  const awakened = Boolean(quirk.awakenedManifestation);
+  const cap = awakened ? 12 : 8;
+  const total = Math.max(0, Math.min(cap, base + modifier));
+  const used = Math.max(0, Number(quirk.virtualPointsUsed || 0));
+  return { base, modifier, cap, total, used, free: Math.max(0, total - used), activation, awakened };
+}

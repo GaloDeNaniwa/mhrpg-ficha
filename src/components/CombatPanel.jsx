@@ -1,7 +1,7 @@
 import { Card, Button, Input, Badge, Help, ProgressBar } from './ui.jsx';
 import { CONDITIONS } from '../data/rules.js';
 import { COMBAT_ACTIVITIES_TEXT, COMBAT_ACTIONS } from '../data/combatActions.js';
-import { derived } from '../utils/calculations.js';
+import { derived, manifestationVirtualPoints } from '../utils/calculations.js';
 
 export default function CombatPanel({sheet,setSheet}){
   const d = derived(sheet);
@@ -10,6 +10,7 @@ export default function CombatPanel({sheet,setSheet}){
   const exhaustion = sheet.state.exhaustion ?? 0;
   const shortRests = sheet.state.shortRests ?? 0;
   const longRests = sheet.state.longRests ?? 0;
+  const qv = manifestationVirtualPoints(sheet.quirk || {});
   const patchState = data => setSheet(s=>({...s,state:{...s.state,...data}}));
   const log = entry => setSheet(s=>({...s,auditPreview:[{at:new Date().toISOString(),...entry},...(s.auditPreview||[])].slice(0,40)}));
   const applyHp = (kind,n) => { const val=Number(n||0); const hp=kind==='damage'?Math.max(0,currentHp-val):Math.min(d.hp,currentHp+val); patchState({currentHp:hp,lastHpInput:0}); log({type:kind,value:val,hp}); };
@@ -58,7 +59,7 @@ export default function CombatPanel({sheet,setSheet}){
     <div className="grid md:grid-cols-3 gap-5">
       <Card className="p-5"><h3 className="font-black text-2xl mb-3">Exaustão</h3><div className="flex items-center gap-5"><Button variant="ghost" onClick={()=>setExhaustion(exhaustion-1)}>-</Button><div className="text-6xl font-black w-20 text-center">{exhaustion}</div><Button variant="ghost" onClick={()=>setExhaustion(exhaustion+1)}>+</Button></div><p className="text-base text-zinc-400 mt-3">Controle o nível atual. O app registra a alteração no log da sessão.</p></Card>
       <Card className="p-5"><h3 className="font-black text-2xl mb-3">Descansos</h3><div className="grid grid-cols-2 gap-2 mb-3"><div className="rounded-xl bg-zinc-950 border border-zinc-800 p-5"><div className="text-sm text-zinc-500">Curtos</div><div className="text-4xl font-black">{shortRests}</div></div><div className="rounded-xl bg-zinc-950 border border-zinc-800 p-5"><div className="text-sm text-zinc-500">Longos</div><div className="text-4xl font-black">{longRests}</div></div></div><div className="flex gap-2 flex-wrap"><Button onClick={shortRest}>Descanso curto</Button><Button variant="ghost" onClick={longRest}>Descanso longo</Button><Button variant="ghost" onClick={()=>patchState({shortRests:0,longRests:0})}>Zerar contadores</Button></div></Card>
-      <Card className="p-5"><h3 className="font-black text-2xl mb-3">Resumo rápido</h3><p className="text-base text-zinc-300">CR {d.cr} • Deslocamento {d.speed}m • CD Quirk {d.quirkDc} • Ataque Quirk {d.quirkAttack >= 0 ? `+${d.quirkAttack}` : d.quirkAttack}</p><p className="text-sm text-zinc-500 mt-2">Sem rolagem automática nesta aba: foco em acompanhamento de mesa.</p></Card>
+      <Card className="p-5"><h3 className="font-black text-2xl mb-3">Resumo rápido</h3><p className="text-base text-zinc-300">CR {d.cr} • Deslocamento {d.speed}m • CD Quirk {d.quirkDc} • Ataque Quirk {d.quirkAttack >= 0 ? `+${d.quirkAttack}` : d.quirkAttack}</p><div className="mt-3 rounded-xl border border-emerald-900 bg-emerald-950/20 p-3"><b>Pontos de Manifestação:</b> {qv.used}/{qv.total} usados • {qv.free} livres <span className="text-zinc-400">(limite {qv.cap})</span></div><p className="text-sm text-zinc-500 mt-2">Sem rolagem automática nesta aba: foco em acompanhamento de mesa.</p></Card>
     </div>
 
     <Card className="p-5"><h3 className="font-black text-2xl mb-3">Ações do turno</h3><p className="text-base text-zinc-400 mb-3">O painel cruza as ações do Capítulo 10.2 com as condições ativas do Capítulo 8.3 e os males de Exaustão. Use como checklist rápido; o Narrador decide exceções.</p><details className="mb-4 rounded-xl border border-zinc-800 bg-zinc-950 p-4"><summary className="cursor-pointer font-bold">Atividades em um encontro de combate</summary><p className="mt-3 whitespace-pre-wrap text-base text-zinc-300">{COMBAT_ACTIVITIES_TEXT}</p></details><div className="grid md:grid-cols-2 gap-3">{COMBAT_ACTIONS.map(a=>{const st=actionStatus(a); return <div key={a.id} className={`rounded-xl border p-4 ${st.state==='Bloqueada'?'border-red-800 bg-red-950/30':st.state==='Atenção'?'border-amber-800 bg-amber-950/20':'border-emerald-800 bg-emerald-950/20'}`}><div className="flex items-center justify-between gap-2"><b className="text-xl">{a.name}</b><Badge>{st.state}</Badge></div><p className="mt-2 text-sm text-zinc-300 whitespace-pre-wrap">{a.summary}</p>{st.notes.length>0 && <ul className="mt-2 list-disc pl-5 text-sm text-amber-100">{st.notes.map(n=><li key={n}>{n}</li>)}</ul>}</div>})}</div></Card>
