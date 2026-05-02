@@ -11,7 +11,7 @@ export const newSheet = () => ({
   attributes: { forca:15, destreza:14, constituicao:13, inteligencia:12, vontade:10, carisma:8 },
   superiorTrait: 'adaptado', uniqueTraits: ['corpo-robusto','pele-resiliente'],
   skillProfs: ['Atletismo','Acrobacia'], saveProfs: ['Força','Constituição'],
-  quirk: { name:'', type:'emissor', base:'dano', attribute:'Força', concept:'', weakness:'', path:'primario', presetId:'custom', nativeAbilities:[], manifestations:'', strategies:'' },
+  quirk: { name:'', type:'emissor', base:'dano', attribute:'Força', concept:'', weakness:'', path:'primario', presetId:'custom', nativeAbilities:[], manifestations:'', strategies:'', virtualPointsMax:0, virtualPointsUsed:0, virtualPointsNotes:'' },
   techniques: [{ id:'tec-1', name:'Golpe de Quirk', grade:1, base:'Dano', action:'Ação Tática', cost:1, range:'Toque', area:'Alvo único', damage:'1d6 + atributo', save:'CR', notes:'' }],
   items: [{ id:'item-1', name:'Apetrecho Básico', type:'Apetrecho', kind:'Corpo a corpo', quantity:1, weight:0, price:'—', attribute:'Força', proficient:true, damage:'1d4 + atributo', equipped:true, notes:'' }],
   inventory: { money:'5d10 ¥', carryingNotes:'', storageNotes:'' },

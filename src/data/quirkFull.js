@@ -50,7 +50,24 @@ export const NATIVE_ABILITIES_EXACT = [
     "summary": "Habilidade nativa de Quirk: Recuperação Acelerada. Use para registrar um benefício inerente à natureza do Quirk; confirme efeitos e custos com a seção de Quirk."
   }
 ];
-export const VIRTUAL_POINTS_TEXT = "Pontos Virtuais das Manifestações de Quirk: servem para medir o limite de efeitos de uma manifestação, mesmo sem gasto direto de Vigor. A manifestação começa com uma reserva virtual e o requisito de ativação altera esse limite. Passiva reduz pontos disponíveis; ação bônus e reação aumentam; ação tática aumenta mais. O limite comum não deve ultrapassar o máximo da manifestação, exceto casos especiais como o despertar.";
+export const VIRTUAL_POINTS_TEXT = `Pontos Virtuais das Manifestações de Quirk
+
+Use este bloco para controlar o limite dos efeitos das Manifestações de Quirk. Os Pontos Virtuais servem como orçamento de criação/efeito para manifestações: eles delimitam o quanto a manifestação pode fazer, mesmo quando ela não consome Vigor diretamente.
+
+Regras importantes para Manifestações de Quirk:
+- Não pode causar dano diretamente em criaturas;
+- Não pode recuperar Pontos de Vida sem limitações de uso;
+- Não pode recuperar Vigor de nenhuma forma;
+- Só pode aumentar a CR de uma criatura se possuir o requisito de Ação Tática;
+- Seus efeitos devem estar dentro do custo máximo de Pontos Virtuais;
+- Podem ser utilizados os mesmos efeitos das técnicas de Quirk, seja para custo ou redução de PP;
+- Não pode possuir efeitos que alterem a forma de ativação.
+
+Controle recomendado na ficha:
+- PVirtuais máximos: anote o limite definido pela manifestação.
+- PVirtuais usados: some o custo virtual dos efeitos ativos.
+- PVirtuais livres: máximo menos usados.
+- Validação: se o efeito ultrapassar o orçamento virtual, ele deve ser reduzido, dividido em outra manifestação ou aprovado pelo Narrador.`;
 export const SPECIAL_MANIFESTATIONS = [
   {
     "id": "vis-o-perfeita",
