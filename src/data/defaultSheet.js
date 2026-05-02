@@ -1,0 +1,22 @@
+export const newSheet = () => ({
+  id: (globalThis.crypto?.randomUUID?.() || `sheet-${Date.now()}`),
+  ownerId: null,
+  mode: 'draft',
+  visibility: 'private',
+  name: '', heroName: '', player: '', concept: '',
+  age:'', height:'', weight:'', appearance:'', clothing:'', voice:'', personality:'', dream:'', path:'', backstory:'', alignment:'Herói',
+  legacyId:'sem-legado', legacyNotes:'', qualities:[], flaws:[], trainings:[],
+  level: 1, xp: 0, attributeMethod: 'standard',
+  classId: 'marcial', primaryAttribute: 'Força',
+  attributes: { forca:15, destreza:14, constituicao:13, inteligencia:12, vontade:10, carisma:8 },
+  superiorTrait: 'adaptado', uniqueTraits: ['corpo-robusto','pele-resiliente'],
+  skillProfs: ['Atletismo','Acrobacia'], saveProfs: ['Força','Constituição'],
+  quirk: { name:'', type:'emissor', base:'dano', attribute:'Força', concept:'', weakness:'', path:'primario', presetId:'custom', nativeAbilities:[], manifestations:'', strategies:'' },
+  techniques: [{ id:'tec-1', name:'Golpe de Quirk', grade:1, base:'Dano', action:'Ação Tática', cost:1, range:'Toque', area:'Alvo único', damage:'1d6 + atributo', save:'CR', notes:'' }],
+  items: [{ id:'item-1', name:'Apetrecho Básico', type:'Apetrecho', kind:'Corpo a corpo', quantity:1, weight:0, price:'—', attribute:'Força', proficient:true, damage:'1d4 + atributo', equipped:true, notes:'' }],
+  inventory: { money:'5d10 ¥', carryingNotes:'', storageNotes:'' },
+  missions: [],
+  state: { currentHp:null, currentVigor:null, conditions:[], tempHp:0, exhaustion:0, shortRests:0, longRests:0, lastHpInput:0, lastVigorInput:0 },
+  manual: { hpBonus:0, crBonus:0, vigorBonus:0, speedBonus:0 },
+  notes: '', auditPreview: []
+});
